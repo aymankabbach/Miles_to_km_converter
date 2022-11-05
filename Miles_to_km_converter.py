@@ -4,7 +4,7 @@ window=Tk()
 window.title("Miles to Km converter")
 ##
 switch=False
-factor=1.6
+factor=1.609344
 def read_user_input(miles_input):
     user_input=miles_input.get()
     return user_input
@@ -36,13 +36,11 @@ def Switch(text_miles,text_km):
     global switch,factor
     switch_value_of_swith_variable()
     if switch:
-        factor=0.62137
-        print(factor)
+        factor=0.6214
         text_miles["text"]="Km"
         text_km["text"]="Miles"
     if switch==False:
-        factor=1.6
-        print(factor)
+        factor=1.609344
         text_miles["text"]="Miles"
         text_km["text"]="Km"
     window.update()
