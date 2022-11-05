@@ -5,12 +5,12 @@ string elements[]={"to km","to miles"};
 enum elements {km=1,miles=2};
 void print_message()
 {
-    int x=1;
+    int number=1;
     cout<<"you want to convert \n";
     for (string element : elements)
     {
-        cout<<x<<" "<<element<<"\n";
-        x++;
+        cout<<number<<" "<<element<<"\n";
+        number++;
     }
     cout<<endl;
 }
