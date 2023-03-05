@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace miles_to_km_converter
 {
@@ -55,7 +56,16 @@ namespace miles_to_km_converter
         private void button1_Click(object sender, EventArgs e)
         {
             double coefficient = get_coefficient();
-            textBox2.Text = Convert.ToString(coefficient * Convert.ToDouble(textBox1.Text));
+            double  textbox_value;
+            try
+            {
+                textbox_value = Convert.ToDouble(textBox1.Text);
+                textBox2.Text = Convert.ToString(coefficient * Convert.ToDouble(textBox1.Text));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(textBox1.Text+" is not a number","Error",MessageBoxButtons.OK,MessageBoxIcon.Error );
+            }   
         }
 
         private void button2_Click(object sender, EventArgs e)
